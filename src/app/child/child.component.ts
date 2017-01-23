@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// This file imports Obserable.of() and makes use of .mapTo(), imported in other.component.ts
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
@@ -11,9 +7,11 @@ import 'rxjs/add/observable/of';
 })
 export class ChildComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('ChildComponent ctor');
+  }
 
   ngOnInit() {
-    Observable.of('a').mapTo(x => 'b');
+    console.log('ChildComponent ngOnInit');
   }
 }
